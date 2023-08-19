@@ -7,5 +7,5 @@ const PORT = process.env.PORT;
 
 // LISTEN
 app.listen(PORT, () => {
-  console.log(`Budgeting app -- Listening on port ${PORT}`);
+  console.log(`Blogging -- Listening on port ${PORT}`);
 });

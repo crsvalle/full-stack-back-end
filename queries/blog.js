@@ -2,6 +2,7 @@ const db = require("../db/dbConfig.js");
 
 const getAllBlogs = async () => {
     try {
+      console.log("hello")
       const allBlogs = await db.any("SELECT * FROM blogs");
       return allBlogs;
     } catch (error) {
@@ -21,8 +22,8 @@ const getAllBlogs = async () => {
 const createBlog = async (blog) => {
   try {
     const newBlog = await db.one(
-      "INSERT INTO blogs () VALUES($1,) RETURNING *",
-      []
+      "INSERT INTO blogs (title, author, image, body, type) VALUES($1, $2, $3, $4, $5) RETURNING *",
+      [blog.title, blog.author, blog.image, blog.body, blog.type]
     );
     return newBlog;
   } catch (error) {
@@ -45,8 +46,8 @@ const deleteBlog = async (id) => {
 const updateBlog = async (id, snack) => {
   try {
     const updatedBlog = await db.one(
-      "UPDATE blogs SET name=$1,  where id=$2 RETURNING *",
-      [, id]
+      "UPDATE blogs SET title=$1, author=$2, image=$3, body=$4, type=$5  where id=$6 RETURNING *",
+      [blog.title, blog.author, blog.image, blog.body, blog.type, id]
     );
     return updatedBlog;
   } catch (error) {
