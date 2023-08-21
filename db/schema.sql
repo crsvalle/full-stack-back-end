@@ -5,9 +5,10 @@ CREATE DATABASE blogs_dev;
 
 CREATE TABLE blogs (
 id SERIAL PRIMARY KEY,
-title TEXT NOT NULL,
+name TEXT NOT NULL,
 author TEXT NOT NULL,
 image TEXT DEFAULT '',
 body TEXT NOT NULL,
-type TEXT
+type TEXT,
+date TEXT
 );
