@@ -28,10 +28,6 @@ blogs.get("/:id", async (req, res) => {
 // CREATE
 blogs.post("/", async (req, res) => {
 
-  if(!req.body.image){
-    req.body.image = "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
-  }
-
   try {
     const blog = await createBlog(req.body);
     res.json(blog);

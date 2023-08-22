@@ -14,9 +14,12 @@ app.get("/", (req, res) => {
   res.send("The Blog API");
 });
 
-// Snacks ROUTES
+//  ROUTES
 const blogController = require("./controllers/blogController.js");
 app.use("/blogs", blogController);
+
+const userController = require("./controllers/userController.js");
+app.use("/users", userController);
 
 
 // 404 PAGE

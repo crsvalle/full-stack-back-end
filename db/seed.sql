@@ -12,5 +12,11 @@ Baldur''s Gate 3 is finally out of early access and fully released, and it is a 
 
 Baldur''s Gate 3 is not just a faithful adaptation of the tabletop game, but also a stunning visual and audio spectacle. The graphics are gorgeous, the animations are fluid, and the environments are detailed. The voice acting is superb, the music is epic, and the sound effect design is well-made for the kind of game it is. The game also runs smoothly on PC, despite being a huge and complex game.
 
-Overall, Baldur''s Gate 3 is an impressive achievement that deserves praise and recognition. It is one of the best RPGs ever made, and one of the closest to emulating the experience of tabletop D&D. It will likely go down as one of the greatest RPGs of all time, if it hasn''t already, but especially so once the Workshop modding support is added to enhance replayability. All future RPGs will be compared to this game as they used to be compared to Skyrim and the Witcher 3. It is a game that will keep you hooked for hours, days, or even weeks, and even months or years later you''ll find new things you haven''t seen before on a previous playthrough keeping you engaged and wanting to come back for more.', 'Games', '08-18-2023')
+Overall, Baldur''s Gate 3 is an impressive achievement that deserves praise and recognition. It is one of the best RPGs ever made, and one of the closest to emulating the experience of tabletop D&D. It will likely go down as one of the greatest RPGs of all time, if it hasn''t already, but especially so once the Workshop modding support is added to enhance replayability. All future RPGs will be compared to this game as they used to be compared to Skyrim and the Witcher 3. It is a game that will keep you hooked for hours, days, or even weeks, and even months or years later you''ll find new things you haven''t seen before on a previous playthrough keeping you engaged and wanting to come back for more.', 'Games', '08-18-2023');
 
+
+
+INSERT INTO users ( name ) VALUES
+
+('Anton Ego'),
+('Fizalpha')
