@@ -21,6 +21,9 @@ app.use("/blogs", blogController);
 const userController = require("./controllers/userController.js");
 app.use("/users", userController);
 
+const searchRoute = require('./controllers/searchController.js');
+app.use('/search', searchRoute)
+
 
 // 404 PAGE
 app.get("*", (req, res) => {

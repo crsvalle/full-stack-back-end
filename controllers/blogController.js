@@ -2,6 +2,9 @@ const express = require("express");
 const blogs = express.Router();
 const { getAllBlogs, getBlog, createBlog, deleteBlog, updateBlog } = require("../queries/blog");
 
+const commentController = require("./commentController.js");
+blogs.use("/:blogId/comments", commentController);
+
 
 // INDEX
 blogs.get("/", async (req, res) => {

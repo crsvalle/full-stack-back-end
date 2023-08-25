@@ -19,3 +19,14 @@ CREATE TABLE users(
  id SERIAL PRIMARY KEY,
  name TEXT NOT NULL
 );
+
+
+DROP TABLE IF EXISTS comments;
+
+CREATE TABLE comments(
+ id SERIAL PRIMARY KEY,
+ blog_id INTEGER REFERENCES blogs (id),
+ name TEXT NOT NULL,
+ content TEXT NOT NULL,
+ date TEXT NOT NULL
+);

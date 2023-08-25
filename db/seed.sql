@@ -20,3 +20,10 @@ INSERT INTO users ( name ) VALUES
 
 ('Anton Ego'),
 ('Fizalpha')
+;
+
+
+INSERT INTO comments ( blog_id, name, content, date) VALUES
+
+('1', 'Fizalpha' , 'cool', '8-19-2023'),
+('2', 'someguycalledGeorge', 'I think thats the best game I ever played', '8-19-2023');
