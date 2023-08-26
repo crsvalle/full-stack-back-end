@@ -1,6 +1,18 @@
 const express = require("express");
-const { getAllUsers, getUser, collectPost } = require("../queries/user");
+const { protectedInfo, getAllUsers, getUser, collectPost, registerUser, loginUser, logoutUser } = require("../queries/user");
+const { registerValidation, loginValidation } = require("../validation/checkAuth");
+const { validationMiddleware } = require("../middlewares/validations-middleware");
 const users = express.Router();
+const { userAuth } = require("../middlewares/passport-middleware");
+
+users.get('/protected', userAuth, protectedInfo);
+
+users.post("/register", registerValidation, validationMiddleware, registerUser )
+
+users.post('/login', loginValidation, validationMiddleware, loginUser)
+
+users.get('/logout', userAuth, logoutUser)
+
 
 users.get("/", async (req, res) => {
     const allUsers = await getAllUsers();
@@ -10,7 +22,6 @@ users.get("/", async (req, res) => {
       res.status(500).json({ error: "server error" });
     }
   });
-
 
 users.get("/:id", async (req, res) => {
     const { id } = req.params;

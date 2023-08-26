@@ -22,8 +22,8 @@ const getAllBlogs = async () => {
 const createBlog = async (blog) => {
   try {
     const newBlog = await db.one(
-      "INSERT INTO blogs (name, author, image, body, type, date) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
-      [blog.name, blog.author, blog.image, blog.body, blog.type, blog.date]
+      "INSERT INTO blogs (name, author, author_id, image, body, type, date) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+      [blog.name, blog.author, blog.author_id, blog.image, blog.body, blog.type, blog.date]
     );
     return newBlog;
   } catch (error) {
@@ -46,8 +46,8 @@ const deleteBlog = async (id) => {
 const updateBlog = async (id, blog) => {
   try {
     const updatedBlog = await db.one(
-      "UPDATE blogs SET name=$1, author=$2, image=$3, body=$4, type=$5, date=$6  where id=$7 RETURNING *",
-      [blog.name, blog.author, blog.image, blog.body, blog.type, blog.date, id]
+      "UPDATE blogs SET name=$1, author=$2, author_id=$3, image=$4, body=$5, type=$6, date=$7  where id=$8 RETURNING *",
+      [blog.name, blog.author, blog.author_id, blog.image, blog.body, blog.type, blog.date, id]
     );
     return updatedBlog;
   } catch (error) {
